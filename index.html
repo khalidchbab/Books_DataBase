@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style >
+    #showform { display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%);}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="modify.js">
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css\style.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+  <script src="js\main.js"></script>
+  <script src="js\jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+      $(document).ready(function(){
+      $("button").click(function(){
+        $("#divProcess").load("form.html");
+        showbutton();
+      });
+      });
+</script>
+
+  <title>Space</title>
+</head>
+
+<body>
+  <div id="showform" class="container">
+    <button class="btn btn-primary btn-lg btn-block" style="width:200px; margin:0 auto;" onclick="showbutton(this)">add</button>
+  </div>
+  <script type="text/javascript">
+  function showbutton(el)
+  {
+    $(el).hide();
+  }
+  </script>
+
+  <div id="divProcess">
+  </div>
+      <br>
+  <div id="divBooks">
+    </div>
+    <div id="form1">
+    </div>
+</body>
+
+</html>

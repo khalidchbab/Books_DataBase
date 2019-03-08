@@ -1,0 +1,104 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#submit").click(function(){
+    $("#divBooks").load("table.php");
+  });
+  });
+
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#loadbook").click(function(){
+    $("#divBooks").load("table.php");
+  });
+  });
+
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var $form = $('form#addbook');
+    $form.submit(function() {
+      if (validate2())
+        $.post($(this).attr('action'), $(this).serialize(), function(response) {
+          alert("Books inserted successfully");
+        });
+      return false;
+    });
+  });
+</script>
+
+<script type="text/javascript" >
+function change() {
+var elem = document.getElementById("loadbook");
+if (elem.value=="load books")
+elem.value = "unload books";
+else elem.value = "load books";
+}
+</script>
+
+  <div class="container">
+    <div class="row main">
+      <div class="main-login main-center">
+        <form form name="addbook" id="addbook" method="post" action="insert.php">
+          <caption ><h1 align="center" class="formTitle">ADD A BOOK</h1></caption>
+
+          <div class="form-group">
+            <label for="name" class="cols-sm-2 control-label">Book's Name :</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-book fa-lg" aria-hidden="true"></i></span>
+                <input type="text" name="bkname" value="" id="bkn" class="form-control"  placeholder="Enter Book's Name" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="Author" class="cols-sm-2 control-label">Author's Name:</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                <input type="text" name="author" value="" id="bka" size="50" placeholder="Enter Author's Name" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="username" class="cols-sm-2 control-label">Edition's Date :</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></span>
+                <input type="date" name="date" value="" id="bkd" size="50" placeholder="Release Date Name" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="url" class="cols-sm-2 control-label">Description :</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-align-justify fa-lg" aria-hidden="true"></i></span>
+                <textarea name="description" id="bkdesc" size="50" placeholder="Description" class="form-control"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm" class="cols-sm-2 control-label">URL :</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-globe fa-lg" aria-hidden="true"></i></span>
+                <input type="text" name="bkfile" size="50" id="fileToUpload" placeholder="https:www......com/book.pdf" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="form-group ">
+          </div>
+          <br>
+            <input type="submit" name="submit" onclick="document.getElementById("loadbook").click" id="submit" value="ADD" class="btn btn-primary">
+            <button type="reset" class="btn btn-primary">Reset</button>
+            <input type="button" name="show"  id="loadbook" onclick="change()" class="btn btn-primary" value="load books">
+            <br><br>
+        </form>
+      </div>
+    </div>
+  </div>
